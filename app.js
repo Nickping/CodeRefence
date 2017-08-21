@@ -7,10 +7,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+
+// const passport = require('passport');
+// const LocalStrategy = require('passport-local').Strategy;
+
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var books = require('./routes/book');
 var question = require('./routes/question');
+
+
 var app = express();
 
 mongoose.connect('mongodb://localhost/mongodb');
@@ -21,8 +28,10 @@ db.once('open', function(){
   console.log('connected to mongodb server');
 });
 
-
-
+//
+// //passport
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
